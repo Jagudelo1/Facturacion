@@ -1,0 +1,109 @@
+.ContentRegister{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px 2px #00000072;
+    border-radius: 12px;
+    padding: 40px;
+}
+
+.ContentRegister h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.FormRegister{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 25px;
+}
+
+.FormRegister .form-control{
+    outline: 0 !important;
+    border: 0 !important;
+    max-width: 100%;
+    background-color: transparent !important;
+    color: #fff !important;
+    box-shadow: 0 0 5px 1px #0000007f !important;
+    transition: all .3s ease-in-out !important;
+}
+  
+.FormRegister .form-control:focus{
+    transition: all .3s ease-in-out !important;
+    box-shadow: 0 0 5px 0 #1615159b !important;
+}
+  
+.FormRegister .form-control::placeholder{
+    color: #ffffffb7 !important;
+}
+
+.FormRegister .password{
+    position: relative;
+}
+
+.FormRegister .password 
+.IconEye1, .IconEye2{
+    position: absolute;
+    top: 74%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.FormRegister .password .IconEye1{
+    color: #050e56 !important;
+}
+
+.FormRegister .password .IconEye2{
+    color: #fff;
+}
+
+.FormRegister .form-label{
+    color: #fff;
+}
+
+.ContentRegister button{
+    border: 0 !important;
+    display: block;
+    margin: 0 auto !important;
+    background-color: #000;
+    margin-top: 20px !important;
+}
+  
+.ContentRegister button:hover{
+    background-color: rgb(37, 37, 37) !important;
+}
+
+@media (min-width: 1367px){
+    .FormRegister .form-control{
+        width: 250px;
+    }
+}
+
+@media (max-width: 1367px){
+    .FormRegister .form-control{
+        width: 250px;
+    }
+}
+
+@media (max-width: 660px){
+    .FormRegister .form-control{
+        width: 200px;
+    }
+}
+
+@media (max-width: 550px){
+    .FormRegister{
+        display: grid;
+        grid-template-columns: auto;
+        column-gap: 25px;
+    }
+
+    .FormRegister .form-control{
+        width: 250px;
+    }
+}

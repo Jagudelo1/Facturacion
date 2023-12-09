@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+body{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #1c8aff 10%, #050e56 100%) !important;
+  background-attachment: fixed !important;
+  font-family: 'Oswald', sans-serif !important;
+}
+
+/* -----> Estilos para la pantalla de carga... <----- */
+.screen-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.spinner {
+  border: 6px solid #ffffff;
+  border-top: 6px solid #81818200;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ContentHomeApp{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px 2px #0000007f;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.ContentHomeApp h1{
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Links a{
+  text-decoration: none;
+  color: #fff;
+  transition: all .3s ease-in-out;
+}
+
+.Links a:hover{
+  color: #9d9d9d;
+}
+
+.FormLogin .form-label{
+  color: #fff;
+}
+
+.FormLogin .form-control{
+  outline: 0 !important;
+  border: 0 !important;
+  max-width: 100%;
+  background-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 0 5px 1px #0000007f !important;
+  transition: all .3s ease-in-out !important;
+}
+
+.FormLogin .form-control:focus{
+  transition: all .3s ease-in-out !important;
+  box-shadow: 0 0 5px 0 #1615159b !important;
+}
+
+.FormLogin .form-control::placeholder{
+  color: #ffffffb7 !important;
+}
+
+.contrasena{
+  position: relative;
+}
+
+.IconEy1{
+  color: #050e56 !important;
+}
+
+.IconEy2{
+  color: #fff;
+}
+
+.IconEy2,
+.IconEy1{
+  position: absolute;
+  top: 55%;
+  right: 4%;
+}
+
+.Links{
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / 3 !important;
+}
+
+.Restaurar{
+  text-decoration: none;
+  text-align: right;
+  grid-column: 1 / 3 !important;
+  color: #fff;
+  transition: all .3s ease-in-out;
+}
+
+.Restaurar:hover{
+  color: #9d9d9d;
+}
+
+.ContentHomeApp button{
+  border: 0 !important;
+  display: block;
+  margin: 0 auto !important;
+  grid-column: 1 / 3;
+  background-color: #000;
+}
+
+.ContentHomeApp button:hover{
+  background-color: rgb(37, 37, 37) !important;
+}
+
+/* Estilos Responsivos */
+@media (min-width: 1367px){
+  .ContentHomeApp form{
+    display: grid !important;
+    grid-template-columns: auto !important;
+    column-gap: 20px !important;
+  }
+
+  .FormLogin .form-control{
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 1367px){
+  .FormLogin .form-control{
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 500px){
+  .FormLogin .form-control{
+    width: 250px !important;
+  }
+}

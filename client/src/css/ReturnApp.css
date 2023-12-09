@@ -1,0 +1,30 @@
+.Return{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.Return .IconReturn{
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.Return .IconReturn:hover{
+    color: #9b9b9b;
+}
+
+@media (max-width: 960px){
+    .Return{
+        position: absolute;
+        top: 5%;
+        left: 6%;
+    }
+}
+
+@media (max-width: 500px){
+    .Return{
+        position: absolute;
+        top: 5%;
+        left: 10%;
+    }
+}
