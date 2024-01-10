@@ -126,7 +126,7 @@ export function VerFacturas() {
                     <div className='TableContentFact'>
                         <h2>Facturas Creadas</h2>
                         <div className="Container-table">
-                            <Table bordered striped className="facture-table">
+                            <Table bordered striped className="table-facture">
                                 <thead className="thead">
                                     <tr>
                                         <th>Seleccionar</th>

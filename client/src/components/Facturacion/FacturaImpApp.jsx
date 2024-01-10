@@ -59,9 +59,10 @@ export function FacturaImp() {
                     <h6>Fecha de Facturación: {new Date(primeraFactura.fecha).toLocaleDateString()}</h6>    
                 </div>
             </div>
+            <hr />
             <div className="table-container">
-                <Table bordered className="table-facture">
-                    <thead className="custom-thead thead">
+                <Table striped bordered hover className="facture-table">
+                    <thead className="thead">
                         <tr>
                             <th>Cantidad</th>
                             <th>Descripción</th>
@@ -69,7 +70,7 @@ export function FacturaImp() {
                             <th>Precio Total</th>
                         </tr>
                     </thead>
-                    <tbody className="custom-tbody">
+                    <tbody className="tbody">
                         {facturasSeleccionadas.map((factura) => (
                         <tr key={factura.id_fact}>
                             <td>{factura.cantidad}</td>
@@ -79,13 +80,16 @@ export function FacturaImp() {
                         </tr>
                         ))}
                     </tbody>
-                    <thead className="custom-thead">
+                    <thead className="thead">
                         <tr>
                             <th colSpan={3}>Valor Total</th>
                             <th>{totalPrecioTotal}</th>
                         </tr>
                     </thead>
                 </Table>
+            </div>
+            <div className="text">
+                <h5>Gracias por tu compra 😊</h5>
             </div>
         </div>
     );
