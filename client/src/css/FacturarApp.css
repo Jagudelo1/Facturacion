@@ -1,0 +1,290 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+/* Estilos para el navbar*/
+.FacturarContent .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+}
+
+.nav .iconLogout{
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.nav .iconLogout:hover{
+    color: #959595;
+    transition: all .3s ease-in-out;
+}
+
+.nav h3{
+    color: #fff;
+}
+
+/* Estilos para el formulario */
+.form-facturar{
+    padding: 15px 50px;
+}
+
+.form-facturar h2{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-facturar .form-control{
+    outline: 0 !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    box-shadow: 0 0 5px 1px #0000007f !important;
+    transition: all .3s ease-in-out !important;
+}
+  
+.form-facturar .form-control:focus{
+    transition: all .3s ease-in-out !important;
+    box-shadow: 0 0 5px 0 #1615159b !important;
+}
+  
+.form-facturar .form-control::placeholder{
+    color: #ffffffb7 !important;
+}
+
+.client-form,
+.fact-form{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 25px;
+    color: #fff;
+}
+
+.fact-form .description{
+    grid-column:  1 / 4 !important;
+}
+
+@media (max-width: 750px) {
+    .client-form,
+    .fact-form{
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .client-form,
+    .fact-form{
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+/* Estilos para el botón enviar*/
+.btn-buttons{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    margin-top: 20px;
+}
+
+.Btn-enviar{
+    border: 0 !important;
+    background-color: #000 !important;
+    transition: all .3s ease-in-out;
+}
+  
+.Btn-enviar:hover{
+    transition: all .3s ease-in-out;
+    background-color: rgb(37, 37, 37) !important;
+}
+
+.btn-buttons a{
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+/* --------> Estilos para el componente "verFactura" <-------- */
+.nav2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.nav2 .Logout{
+    color: #fff !important;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.nav2 .Logout:hover{
+    transition: all .3s ease-in-out;
+    color: rgb(177, 176, 176) !important;
+}
+
+.nav2 .returnForm{
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.nav2 .returnForm:hover{
+    transition: all .3s ease-in-out;
+    color: rgb(177, 176, 176) !important;
+}
+
+.table-facture tbody, td, tfoot, th, thead, tr{
+    border-style: none !important;
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+thead tr{
+    background-color: #0e2fbf !important;
+    font-weight: 500 !important;
+}
+
+tbody tr{
+    background-color: #1255B6 !important;
+}
+
+.TableContentFact h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.Container-table{
+    padding: 10px 50px !important;
+}
+
+.Container-table table{
+    text-align: center;
+}
+
+.ButtonVer{
+    display: block !important;
+    margin: 0 auto !important;
+    border: 0 !important;
+    background-color: #000 !important;
+    transition: all .3s ease-in-out !important;
+}
+
+.ButtonVer:hover{
+    transition: all .3s ease-in-out !important;
+    background-color: rgb(37, 37, 37) !important;
+}
+
+/* Estilos modal */
+.modal-content{
+    background-color: #fff !important;
+}
+
+.modal-content .form-label{
+    color: #000 !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.form-groupd .form-control{
+    outline: 0 !important;
+    border: 0 !important;
+    max-width: 100%;
+    background-color: transparent !important;
+    box-shadow: 0 0 5px 1px #0000007f !important;
+    transition: all .3s ease-in-out !important;
+}
+  
+.form-groupd .form-control:focus{
+    transition: all .3s ease-in-out !important;
+    box-shadow: 0 0 5px 0 #1615159b !important;
+}
+  
+.form-groupd .form-control::placeholder{
+    color: #ffffffb7 !important;
+}
+
+.ButtonFactura{
+    display: block !important;
+    margin: 0 auto !important;
+    background-color: #000 !important;
+    border: 0 !important;
+    transition: all .3s ease-in-out !important;
+}
+
+.ButtonFactura:hover{
+    transition: all .3s ease-in-out !important;
+    background-color: rgb(37, 37, 37) !important;
+}
+
+/* --------> Estilos para el componente de FacturaImpApp <-------- */
+.ContentFactImp{
+    padding: 30px;
+}
+
+.title-PLR h2{
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.Header1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+
+.Header1 .co-header1 h6{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.Header1 .co-header1 h2{
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.Header1 .co-header2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    overflow: hidden;
+}
+
+.Header1 .co-header2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Contentinfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-client,
+.date-facture{
+    color: #000;
+}
+
+.info-client h4{
+    font-weight: 600;
+    letter-spacing: 2px;
+}

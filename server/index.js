@@ -8,11 +8,14 @@ const app = express();
 const mysql = require("mysql");
 // Importa el módulo cors, que se utiliza para habilitar el Cross-Origin Resource Sharing (CORS) en la aplicación.
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 // Configuración de middleware para manejar CORS (Cross-Origin Resource Sharing).
 app.use(cors());
 // Configuración de middleware para analizar solicitudes JSON.
 app.use(express.json());
+// Configuración de cookies Parser
+app.use(cookieParser());
 // Configuración de middleware de sesión.
 app.use(session({
     secret: "Bethel1905", // Clave secreta para firmar las cookies de sesión.
@@ -88,6 +91,17 @@ app.post("/Entrar", (req, res) => {
     });
 });
 
+// Cerrar sesión del usuario
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if(err) {
+            console.error(err);
+        } else {
+            res.redirect('/'); // Redirige a la pagina principal
+        }
+    });
+});
+
 // Endpoint para verificar las credenciales
 app.post("/verificarCredenciales", (req, res) => {
     const correo = req.body.correo;
@@ -112,6 +126,50 @@ app.post("/verificarCredenciales", (req, res) => {
 });
 
 // Cambiar contraseña
+app.post("/cambiarContrasena", (req, res) => {
+    const usuario = req.body.usuario;
+    const contrasena = req.body.contrasena;
+
+    // Actualiza la contraseña del usuario en la base de datos
+    db.query('UPDATE usuarios SET contrasena = ? WHERE usuario = ?', [contrasena, usuario], (err, result) => {
+        if(err) {
+            console.log(err);
+            res.json({ success: false, message: "Error al cambiar la contraseña"});
+        } else {
+            res.json({ success: true, message: "Contraseña cambiada con éxito" });
+        }
+    });
+});
+
+/* Envió de factura a la base de datos */
+app.post('/CreateFactura', (req, res) => {
+    const { fecha, cliente, cedulaNit, descripcion, cantidad, precioUnitario, precioTotal } = req.body;
+
+    // Consulta SQL para insertar en la tabla 'facturas':
+    const insertQuery = "INSERT INTO facturas (fecha, cliente, cedulaNit, descripcion, cantidad, precioUnitario, precioTotal) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    db.query(insertQuery, [fecha, cliente, cedulaNit, descripcion, cantidad, precioUnitario, precioTotal], (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Error al crear la factura' });
+        } else {
+            res.status(200).json({ message: 'Factura creada exitosamente' });
+        }
+    });
+});
+
+/* Ruta para obtener todos los datos de la tabla facturas */
+app.get("/Facturas", (req, res) => {
+    const query = "SELECT * FROM facturas";
+    db.query(query, (error, results) => {
+        if(error){
+            console.error("Error al obtener los datos de la tabla facturas", error);
+            res.status(500).json({ error: "Error interno del servidor" });
+        } else {
+            res.status(200).json(results);
+        }
+    });
+});
 
 // Mensaje de bd Activa
 app.listen(3001,() => {
