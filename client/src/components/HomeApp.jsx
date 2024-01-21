@@ -105,7 +105,7 @@ export function HomeApp() {
                         </Form.Group>
                         <Form.Group className="mb-3 Links">
                             <Link to='/Registro'>Crear Usuario</Link>
-                            <Link to='/Recuperar' className="Restaurar">Recuperar contraseña</Link>
+                            <Link to='/Recuperar' className="Restaurar">Recuperar Contraseña</Link>
                         </Form.Group>
                         <Button onClick={loginSubmit}>Entrar</Button>
                     </Form>
